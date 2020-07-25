@@ -56,3 +56,19 @@ public:
 
 Time Complexity - O(1) ;
 Space Complexity - O(1) ;
+
+//Approach 3 :
+
+class Solution {
+public:
+    int countOdds(int low, int high) {
+        
+        //number of elements between the inclusive of both
+        int temp = high-low+1 ;
+        
+        return (temp+(low%2))/2 ;
+        
+    }
+};
+Time Complexity - O(1) ;
+Space Complexity - O(1) ;
