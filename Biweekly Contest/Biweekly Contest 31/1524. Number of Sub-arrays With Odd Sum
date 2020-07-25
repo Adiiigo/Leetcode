@@ -134,3 +134,45 @@ public:
 
 
 //Approach 2:
+class Solution {
+    
+    /*
+    even + odd = odd 
+    odd + even = odd
+    old + old = even 
+    even + even = even 
+    */
+    
+public:
+    int numOfSubarrays(vector<int>& arr) {
+        
+        if(arr.size() == 0) return 0 ;
+        
+        int MOD=1000000007;
+        
+        int pre_sum = 0 ;
+        int odd_count = 0 ;
+        //for single number subset => if it will be odd then we have to count it => even_count = 1
+        int even_count = 1 ;
+        int answer = 0 ;
+        
+        for(int num : arr){
+            pre_sum = pre_sum + num ;
+            if(pre_sum % 2 == 1){
+                //total sum is odd
+                
+                //answer will add the subsets of whatever is present + even such count
+                answer = answer + even_count ;
+                odd_count++ ;
+            }else{
+                answer = answer + odd_count ;
+                even_count++ ;
+            }
+            answer = answer % MOD ;
+        }
+        return answer ;
+    }
+};
+
+Time Complexity - O(n)
+Space Complexity - O(1)
