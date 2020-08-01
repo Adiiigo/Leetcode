@@ -1,0 +1,58 @@
+Write an algorithm to determine if a number n is "happy".
+
+A happy number is a number defined by the following process: Starting with any positive integer, 
+replace the number by the sum of the squares of its digits, and repeat the process until 
+the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1. 
+Those numbers for which this process ends in 1 are happy numbers.
+
+Return True if n is a happy number, and False if not.
+
+Example: 
+
+Input: 19
+Output: true
+Explanation: 
+12 + 92 = 82
+82 + 22 = 68
+62 + 82 = 100
+12 + 02 + 02 = 1
+
+Solutions:
+
+//Approach 1:
+-> In this logic, either the number will end in 1 or 
+it will come back to one of the numbers which are already seen
+
+class Solution {
+        
+    public:    
+    //function which is used to find the sum of the sqaures of the number
+    int sumOfSquares(int number){
+        int sum = 0 ;
+        while(number > 0){
+            sum += (number%10) * (number%10) ;
+            number /= 10  ;
+        }        
+        return sum ;
+    }
+    
+    bool isHappy(int n) {
+        
+        unordered_set<int> visited ;
+        int flag = -1;
+        
+        while(true){
+            if(n == 1){
+               return true ;
+            }
+            n = sumOfSquares(n) ;
+            if(visited.count(n) == 1 ){
+                return false ;
+            }
+            visited.insert(n) ;
+        }   
+    }
+};
+
+Time Complexity - Very unsure, we will get answer in 20 itrations
+Space Complexity - O(size of the set)
