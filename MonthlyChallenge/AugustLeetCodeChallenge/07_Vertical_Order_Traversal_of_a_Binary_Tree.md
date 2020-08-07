@@ -146,3 +146,13 @@ public:
     }
 };
 ```
+TestCases :
+```
+[3,9,20,null,null,15,7]
+[1,2,3,4,5,6,7]
+[1,2,3,4,5,6,7,null,null,null,null,null,8,null,9]
+[1,2,3,4,5,6,7,null,null,null,null,null,8,10,9,null,null,11,null,null,null,null,12]
+[0,8,1,null,null,3,2,null,4,5,null,null,7,6]
+[0,2,1,3,null,null,null,4,5,null,7,6,null,10,8,11,9]
+[0,5,1,9,null,2,null,null,null,null,3,4,8,6,null,null,null,7]
+```
