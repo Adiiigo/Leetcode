@@ -7,6 +7,10 @@ For each node at position (X, Y), its left and right children respectively will 
 Running a vertical line from X = -infinity to X = +infinity, whenever the vertical line touches some nodes, we report the values of the nodes in order from top to bottom (decreasing Y coordinates).
 
 #### *If two nodes have the same position, then the value of the node that is reported first is the value that is smaller.*
+```
+if the nodes are at the same level, then look at the values , 
+if the nodes are not at the same level then one with the smaller level will come first
+```
 
 Return an list of non-empty reports in order of X coordinate.  Every report will have a list of values of nodes.
 
@@ -40,9 +44,8 @@ However, in the report "[1,5,6]", the node value of 5 comes first since 5 is sma
 
 ## Solutions:
 
-### Approach 1:
+### Approach 1:(Preorder)
 - Using hash map to store the level and corresponding vector of node value which lie in that level
-- The traversal used is preorder traversal which makes it difficult to follow above bold property and thus gives the error in execution
 ```
 /**
  * Definition for a binary tree node.
