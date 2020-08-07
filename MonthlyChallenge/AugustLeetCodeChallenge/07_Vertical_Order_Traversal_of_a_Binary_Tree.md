@@ -159,3 +159,4 @@ TestCases :
 [0,2,1,3,null,null,null,4,5,null,7,6,null,10,8,11,9]
 [0,5,1,9,null,2,null,null,null,null,3,4,8,6,null,null,null,7]
 ```
+Reference : https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/discuss/777735/Clean-and-Concise-or-Logic-explained-or-Fully-commented-or-Beats-94-C%2B%2B
